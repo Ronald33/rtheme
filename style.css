@@ -14,7 +14,8 @@ Tags: rapazave, rtheme
 Text Domain: rtheme
 */
 
-body
+.bg-centered
 {
-    border: 2px solid red;
+    background-size: cover;
+    background-position: center;
 }
