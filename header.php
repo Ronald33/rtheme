@@ -14,7 +14,6 @@
             <?php
             if(has_nav_menu('main_menu')):
             ?>
-            <div class="header">
                 <!-- RMenu -->
                 <div class="rmenu fixed-top">
                     <div class="container">
@@ -37,8 +36,6 @@
                             <?php
                             }
                             ?>
-                            
-
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -56,7 +53,6 @@
                     </div>
                 </div>
                 <!-- End RMenu -->
-            </div>
             <?php
             endif;
             ?>
