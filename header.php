@@ -24,7 +24,7 @@
                             if (has_custom_logo())
                             {
                             ?>
-                                <a class="navbar-brand" href="#" target="_blank">
+                                <a class="navbar-brand" href="<?=get_home_url();?>" target="_self">
                                     <img src="<?=$logo[0];?>" alt="<?=get_bloginfo('name');?>">
                                 </a>
                             <?php

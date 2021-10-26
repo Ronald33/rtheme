@@ -3,6 +3,8 @@
 
     $(document).ready(function()
     {
+        new WOW().init();
+
         $('.carousel').slick({
             autoplay: true,
             infinite: true,
