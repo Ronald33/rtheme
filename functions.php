@@ -30,7 +30,7 @@ if(!function_exists('rtheme_scripts')):
 
         wp_register_style('rmenu', get_template_directory_uri() . '/assets/rmenu/rmenu.css', ['bootstrap']);
 
-        wp_register_style('animate', get_template_directory_uri() . '/assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+        wp_register_style('fa', get_template_directory_uri() . '/assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css');
         wp_register_style('animate', get_template_directory_uri() . '/assets/node_modules/animate.css/animate.min.css');
         wp_register_style('slick', get_template_directory_uri() . '/assets/node_modules/slick-carousel/slick/slick.css', ['animate']);
         wp_register_style('slick-theme', get_template_directory_uri() . '/assets/hero-slider/slick-theme.css', ['slick']);
@@ -49,7 +49,7 @@ if(!function_exists('rtheme_scripts')):
         wp_register_script('slick', get_template_directory_uri() . '/assets/node_modules/slick-carousel/slick/slick.min.js', [], null, true);
         wp_register_script('slick-animation', get_template_directory_uri() . '/assets/node_modules/slick-animation/slick-animation.min.js', ['slick'], null, true);
 
-        wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', ['rmenu', 'slick-animation'], '1.0.0', true);
+        wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', ['fa', 'rmenu', 'slick-animation'], '1.0.0', true);
 
         wp_enqueue_script('scripts');
         
