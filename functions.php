@@ -25,12 +25,12 @@ if(!function_exists('rtheme_scripts')):
     function rtheme_scripts()
     {
         // Css
+        wp_register_style('fa', get_template_directory_uri() . '/assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css');
         wp_register_style('bootstrap', get_template_directory_uri() . '/assets/node_modules/bootstrap/dist/css/bootstrap.min.css');
-        wp_register_style('mdbootstrap', get_template_directory_uri() . '/assets/node_modules/mdbootstrap/css/mdb.min.css', ['bootstrap']);
+        wp_register_style('mdbootstrap', get_template_directory_uri() . '/assets/node_modules/mdbootstrap/css/mdb.min.css', ['bootstrap', 'fa']);
 
         wp_register_style('rmenu', get_template_directory_uri() . '/assets/rmenu/rmenu.css', ['bootstrap']);
-
-        wp_register_style('fa', get_template_directory_uri() . '/assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+        
         wp_register_style('animate', get_template_directory_uri() . '/assets/node_modules/animate.css/animate.min.css');
         wp_register_style('slick', get_template_directory_uri() . '/assets/node_modules/slick-carousel/slick/slick.css', ['animate']);
         wp_register_style('slick-theme', get_template_directory_uri() . '/assets/hero-slider/slick-theme.css', ['slick']);
@@ -49,7 +49,7 @@ if(!function_exists('rtheme_scripts')):
         wp_register_script('slick', get_template_directory_uri() . '/assets/node_modules/slick-carousel/slick/slick.min.js', [], null, true);
         wp_register_script('slick-animation', get_template_directory_uri() . '/assets/node_modules/slick-animation/slick-animation.min.js', ['slick'], null, true);
 
-        wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', ['fa', 'rmenu', 'slick-animation'], '1.0.0', true);
+        wp_register_script('scripts', get_template_directory_uri() . '/assets/js/scripts.js', ['jquery', 'mdbootstrap'], null, true);
 
         wp_enqueue_script('scripts');
         
@@ -58,6 +58,34 @@ if(!function_exists('rtheme_scripts')):
 endif;
 
 add_action('wp_enqueue_scripts', 'rtheme_scripts');
+
+if(!function_exists('custom_scripts')):
+    function custom_scripts()
+    {
+        if(is_front_page())
+        {
+            wp_enqueue_script('slider-main', get_template_directory_uri() . '/assets/js/slider-main.js', ['rmenu', 'slick-animation'], '1.0.0', true);
+        }
+        // else if(is_page(['primer-curso-orientacion']))
+        // {
+        //     wp_enqueue_script('slider-auto', get_template_directory_uri() . '/assets/js/slider-auto.js', ['jquery'], null, true );
+        // }
+    }
+endif;
+
+add_action('wp_enqueue_scripts', 'custom_scripts');
+
+if(!function_exists('rtheme_menus')):
+
+    function rtheme_menus()
+    {
+        register_nav_menus([
+            'main_menu' => __('Menú principal', 'rtheme'), 
+            'social_menu' => __('Menú redes sociales', 'rtheme')
+        ]);
+    }
+
+endif;
 
 if(!function_exists('rtheme_menus')):
 
