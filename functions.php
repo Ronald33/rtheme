@@ -27,7 +27,7 @@ if(!function_exists('rtheme_scripts')):
         // Css
         wp_register_style('fa', get_template_directory_uri() . '/assets/node_modules/@fortawesome/fontawesome-free/css/all.min.css');
         wp_register_style('bootstrap', get_template_directory_uri() . '/assets/node_modules/bootstrap/dist/css/bootstrap.min.css');
-        wp_register_style('mdbootstrap', get_template_directory_uri() . '/assets/node_modules/mdbootstrap/css/mdb.min.css', ['bootstrap', 'fa']);
+        wp_register_style('mdbootstrap', get_template_directory_uri() . '/assets/node_modules/mdbootstrap/css/mdb.min.css', ['fa', 'bootstrap']);
 
         wp_register_style('rmenu', get_template_directory_uri() . '/assets/rmenu/rmenu.css', ['bootstrap']);
         
@@ -43,7 +43,7 @@ if(!function_exists('rtheme_scripts')):
         wp_deregister_script('jquery');
         wp_register_script('jquery', get_template_directory_uri() . '/assets/node_modules/jquery/dist/jquery.min.js', [], null, true);
         wp_register_script('bootstrap', get_template_directory_uri() . '/assets/node_modules/bootstrap/dist/js/bootstrap.min.js', ['jquery'], null, true);
-        wp_register_script('mdbootstrap', get_template_directory_uri() . '/assets/node_modules/mdbootstrap/js/mdb.min.js', ['jquery'], null, true);
+        wp_register_script('mdbootstrap', get_template_directory_uri() . '/assets/node_modules/mdbootstrap/js/mdb.min.js', ['jquery', 'bootstrap'], null, true);
         wp_register_script('rmenu', get_template_directory_uri() . '/assets/rmenu/rmenu.js', ['mdbootstrap'], null, true);
 
         wp_register_script('slick', get_template_directory_uri() . '/assets/node_modules/slick-carousel/slick/slick.min.js', [], null, true);
